@@ -1,2 +1,0 @@
-for line,stuff in [([n for x,n in enumerate(i.split()[0]) if not (n=="." and (x==0 or i.split()[0][min(x+1,len(i.split()[0])-1)]=="."))],i.split()[1].split(",")) for i in open("data.txt","r").read().splitlines()]:
-    print(line)

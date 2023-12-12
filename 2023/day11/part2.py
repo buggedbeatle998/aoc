@@ -1,4 +1,4 @@
-data,tot,width=[[[n,1] for n in i] for i in open("data.txt","r").read().splitlines()],0,2
+data,tot,width=[[[n,1] for n in i] for i in open("data.txt","r").read().splitlines()],0,1000000
 for i in range(len(data[0]))[::-1]:
     if all([False if data[n][i][0]=="#" else True for n in range(len(data))]):
         for n in range(len(data)): data[n][i][1]=width

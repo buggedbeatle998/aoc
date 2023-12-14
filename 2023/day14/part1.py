@@ -1,0 +1,3 @@
+data=["".join([i[n] for i in open("data.txt","r").read().splitlines()]).split("#") for n in range(len(open("data.txt","r").read().splitlines()[0]))]
+for i in range(len(data)): data[i]=[sum(range(len(open("data.txt","r").read().splitlines())-(1+sum([len(k) for k in data[i][::-1][n+1:]])+len(data[i])-(n+3)+data[i][-1-n].count("O")),len(open("data.txt","r").read().splitlines())-(1+sum([len(k) for k in data[i][::-1][n+1:]])+len(data[i])-(n+3)))) for n in range(len(data[i]))]
+print(sum([i for n in data for i in n]))

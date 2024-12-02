@@ -1,36 +1,35 @@
-#include <algorithm>
+#include<algorithm>
 #include<fstream>
 #include<iostream>
 #include<string>
 #include<sstream>
-#include<vector>
 #include<cmath>
 
 using namespace std;
 
 
 int main() {
-    ifstream data("test.txt");
+    ifstream data("input.txt");
     int total = 0;
 
     string line;
     while (getline(data, line)) {
-        int prev = -1;
         string num;
         bool safe = false;
         int ignore = std::count(line.begin(), line.end(), ' ') + 2;
         while (!safe && ignore-- > 0) {
+            cout << '\n';
             int i = 0;
+            int prev = -1;
             short int isdec = -1;
             stringstream ss(line);
             while (getline(ss, num, ' ')) {
                 if (i++ == ignore) {
-                    cout << num << '\n';
                     continue;
                 }
+                cout << num << ' ';
                 if (prev != -1 && (abs(prev - stoi(num)) > 3 || prev - stoi(num) == 0 || (isdec != -1 && signbit(stoi(num) - prev) != isdec))) {
                     safe = false;
-                    cout << line << '\n';
                     break;
                 }
                 if (prev != -1) {

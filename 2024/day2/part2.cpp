@@ -18,7 +18,7 @@ int main() {
         bool safe = false;
         int ignore = std::count(line.begin(), line.end(), ' ') + 2;
         while (!safe && ignore-- > 0) {
-            cout << '\n';
+            //cout << '\n';
             int i = 0;
             int prev = -1;
             short int isdec = -1;
@@ -27,7 +27,7 @@ int main() {
                 if (i++ == ignore) {
                     continue;
                 }
-                cout << num << ' ';
+                //cout << num << ' ';
                 if (prev != -1 && (abs(prev - stoi(num)) > 3 || prev - stoi(num) == 0 || (isdec != -1 && signbit(stoi(num) - prev) != isdec))) {
                     safe = false;
                     break;

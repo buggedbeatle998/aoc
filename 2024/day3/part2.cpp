@@ -15,13 +15,10 @@ int main() {
     string::const_iterator start(input.cbegin());
     bool can = true;
     while (regex_search(start, input.cend(), matched, mulregex)) {
-        cout << matched[0];
         if (matched[0] == "do()") can = true;
         else if (matched[0] == "don't()") can = false;
-        else if (can) {
-            cout << matched[1] << ' ' << matched[2] << '\n';
+        else if (can)
             total += stoi(matched[1]) * stoi(matched[2]);
-        }
         start = matched.suffix().first;
     }
 

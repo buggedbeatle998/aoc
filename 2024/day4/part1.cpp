@@ -1,4 +1,3 @@
-#include <algorithm>
 #include<fstream>
 #include<iostream>
 #include<regex>
@@ -33,13 +32,10 @@ int main() {
                     && input[y + dir.second * 2][x + dir.first * 2] == 'A'
                     && input[y + dir.second * 3][x + dir.first * 3] == 'S') {
                         total++;
-                        // cout << x << ", " << y << '\n';
-                        // cout << dir.first << ' ' << dir.second << '\n';
                 }
             }
             x++;
             start = foundx.suffix().first;
-            //cout << foundx.suffix() << '\n';
         }
     }
 

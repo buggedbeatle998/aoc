@@ -1,4 +1,3 @@
-#include <algorithm>
 #include<fstream>
 #include<iostream>
 #include<regex>
@@ -35,12 +34,10 @@ int main() {
                         && (topleft == 'M' || topleft == 'S')
                         && input[y + dirs[3].second * 1][x + dirs[3].first * 1] == (topleft == 'M' ? 'S' : 'M')) {
                             total++;
-                            //cout << x << ", " << y << '\n';
                     }
             }
             x++;
             start = foundx.suffix().first;
-            //cout << foundx.suffix() << '\n';
         }
     }
 

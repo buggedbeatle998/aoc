@@ -15,9 +15,9 @@ int main() {
     std::istreambuf_iterator<char>());
     int total = 0;
     const regex findpos("[0-9a-zA-Z]");
-    const int width = std::count(input.begin(), input.end(), '\n') + 1;
+    const int height = std::count(input.begin(), input.end(), '\n') + 1;
     input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
-    const int height = (int)input.size() / width;
+    const int width = (int)input.size() / height;
 
     unordered_map<string, vector<pair<int, int>>> antennas;
     smatch antfound;

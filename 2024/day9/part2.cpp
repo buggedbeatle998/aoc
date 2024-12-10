@@ -1,6 +1,7 @@
 #include<fstream>
 #include<iostream>
 #include<string>
+#include<vector>
 
 using namespace std;
 
@@ -13,6 +14,7 @@ int main() {
     int idx = -1;
     int end = input.size();
     int rptr = end - 1;
+    vector<short> offs(0, end);
 
     while (lptr <= rptr) {
         if (input[rptr] == '0') {
@@ -22,32 +24,30 @@ int main() {
         int counter = 0;
         int sum = -1;
         while (counter < rptr) {
+            cout << counter << '\n';
             if (!(counter % 2)) {
                 sum += input[counter];
             } else {
-                if ((input[counter] & '?') >= input[rptr]) {
-                    sum += ((input[counter] & 960) >> 6);
-                    int endidx = sum + (input[counter] & '?') - '0';
+                if (input[counter] >= input[rptr]) {
+                    sum += offs[counter];
+                    int endidx = sum + input[counter] - '0';
                     total += (long long)(rptr + 1) / 2 * (endidx * (endidx + 1) - sum * (sum + 1)) / 2;
-                    cout << ((long long)(rptr + 1) / 2 * (endidx * (endidx + 1) - sum * (sum + 1)) / 2) << ' ' << sum << ' ' << ((input[counter] & 960) >> 6) << ' ' << counter << '\n';
+                    cout << ((long long)(rptr + 1) / 2 * (endidx * (endidx + 1) - sum * (sum + 1)) / 2) << ' ' << sum << ' ' << counter << '\n';
                     if (input[counter] == input[rptr]) {
-                        input[counter] = 0;
+                        input[counter] = '0';
                     } else {
                         input[counter] -= input[rptr] - '0';
-                        input[counter] += input[rptr] << 6;
+                        offs[counter] += input[counter] - input[rptr];
                     }
-                    sum += (input[counter] & '?');
+                    sum += input[counter];
+                    input[rptr] = '0';
                 } else {
-                    sum += (input[counter] & '?') + ((input[counter] & 960) >> 6);
+                    sum += (input[counter] - '0') + (offs[counter]);
                 }
             }
             counter++;
         }
         rptr -= 2;
-    }
-
-    for (int i = 1; i < end; i += 2) {
-        input[i] = (input[i] + ((input[i] & 960) >> 6)) & '?';
     }
 
     while (lptr < end) {

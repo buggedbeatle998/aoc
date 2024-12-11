@@ -7,6 +7,8 @@
         "istream": "cpp",
         "ostream": "cpp",
         "ios": "cpp",
-        "xlocnum": "cpp"
+        "xlocnum": "cpp",
+        "xhash": "cpp",
+        "unordered_map": "cpp"
     }
 }

@@ -9,6 +9,7 @@
         "ios": "cpp",
         "xlocnum": "cpp",
         "xhash": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "regex": "cpp"
     }
 }

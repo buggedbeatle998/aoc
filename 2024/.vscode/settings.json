@@ -10,6 +10,15 @@
         "xlocnum": "cpp",
         "xhash": "cpp",
         "unordered_map": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "iterator": "cpp",
+        "queue": "cpp",
+        "algorithm": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "xutility": "cpp",
+        "xtree": "cpp",
+        "vector": "cpp",
+        "set": "cpp"
     }
 }

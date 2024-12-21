@@ -19,6 +19,7 @@
         "xutility": "cpp",
         "xtree": "cpp",
         "vector": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "tuple": "cpp"
     }
 }

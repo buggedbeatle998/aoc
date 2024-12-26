@@ -1,0 +1,2 @@
+cdj,z08,mrb,z16,gfm,z32,gfm
+cdj,dhm,gfm,mrb,qjd,z08,z16,z32
